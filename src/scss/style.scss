@@ -1,6 +1,15 @@
 $bg-color: #333;
 $color: #fff;
 
+@function set-text-color($bg-color) {
+    @if(lightness($bg-color) > 50) {
+        @return #000;
+    } 
+    @else {
+        @return #FFF;
+    }
+}
+
 body {
     background: $bg-color;
     color:$color;
