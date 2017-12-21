@@ -18,3 +18,4 @@ function closeMenu(event) {
     close.setAttribute('class', 'nav__close unclicked');
     nav.setAttribute('class', 'menu inactive');
 }
+

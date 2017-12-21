@@ -1,41 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Responsive Website</title>
-		<meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="css/reset.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Responsive Website</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 		
 </head>
 
-<body>
-		<nav class="nav">
-			<img src="images/mobile/logo.png" alt="logo" class="nav__logo" />
-			<img src="images/mobile/menu.png" alt="menu" class="nav__menu"/>
-			<img src="images/mobile/x.png" alt="close" class="nav__close"/>
-		</nav>
-
-		<div class="menu">
-			<ul>
-				<li><a href="" class="menu__item">認識我們</a></li>
-				<li><a href="" class="menu__item">＠bc好車網</a></li>
-				<li><a href="" class="menu__item">數位服務</a></li>
-				<li><a href="" class="menu__item">Contact US</a></li>
-			</ul>
+<body>		
+	<div class="textContainer">
+		<div class="pc">				
+			<nav class="pc__nav">	
+				<img src="images/logo.png" alt="logo" class="pc__nav__logo">
+				<ul>
+					<li class="pc__nav__item"><a href="">認識我們</a></li>
+					<li class="pc__nav__item"><a href="">＠bc好車網</a></li>
+					<li class="pc__nav__item"><a class="pc__nav__item--link" href="">數位服務</a></li>
+					<li class="pc__nav__item"><a href="">Contact US</a></li>
+				</ul>
+			</nav>
 		</div>
-				
-		<div class="header">
-			<img src="images/mobile/mainBG.png" alt="bc" class="header__main" />
-			<p class="header__title">
-					Think Amazing<br>
-					Do it Amazing
-			</p>
-		</div>	
+	</div>
 
-		<main class="main">
-			<div class="container">
+	<nav class="nav">
+		<img src="images/mobile/logo.png" alt="logo" class="nav__logo" />
+		<img src="images/mobile/menu.png" alt="menu" class="nav__menu"/>
+		<img src="images/mobile/x.png" alt="close" class="nav__close"/>
+	</nav>
+
+	<div class="menu">
+		<ul>
+			<li><a href="" class="menu__item">認識我們</a></li>
+			<li><a href="" class="menu__item">＠bc好車網</a></li>
+			<li><a href="" class="menu__item">數位服務</a></li>
+			<li><a href="" class="menu__item">Contact US</a></li>
+		</ul>
+	</div>
+
+	<div class="header">
+		<img src="images/mobile/mainBG.png" alt="bc" class="header__bg header__bg--mobile" />
+		<p class="header__title header__title--mobile">
+			Think Amazing<br>
+			Do it Amazing
+		</p>
+		<p class="header__title header__title--pc">
+			Think Amazing<br>
+			Create Prospects
+		</p>	
+		<p class="header__paragraph">
+			我們是和泰汽車集團的一員，除了在台灣汽車市場我們擁有豐富的經驗與資源外，<br>
+			也希望在網路的世界裡建立一個在“車”與“人”之間有更多互動的平台<br>
+			我們期許創造的不只是一個新的服務，而是一個全然不同的生活觀與生活方式，<br>
+			除滿足"移動"的需求外，也延伸了更多更便利"人"與"車"的想像
+		</p>		
+	</div>
+
+	<div class="triangle">
+		<img src="images/triangle.png" alt="triangle" class="triangle__image"/>
+		<div class="triangle__container">
+		<p class="triangle__container__paragraph">
+				我們現在對未來的發展更具有信心，也希望有跟我們一樣有<br>
+				熱誠的夥伴，若你也想要大展身手，歡迎你一起加入我們
+		</p>
+		<a href="" class="triangle__container__link">
+			加入我們
+		</a>
+		</div>
+	</div>
+
+	<main class="main">
+		<div class="textContainer">
+			<div class="main-mobile">
 				<p class="main__paragraph">
 						我們是和泰汽車集團的一員，除了在台灣汽車市場我們擁有
 						豐富的經驗與資源外，也希望在網路的世界裡建立一個在
@@ -50,74 +88,77 @@
 				</p>
 				<a href="" class="main__link">
 					加入我們
-				</a><br>
-				<img src="images/mobile/abclogo.png" alt="abclogo"/>
-				
-				<p class="main__title bold">
-						滿足你對"安心"的需求，也延伸你對
-						"車"與"生活"更多的想像
-				</p>
-				<p class="main__paragraph">
-						@bc好車網的成立以建構讓消費者安心、讓車商放心的
-						中古車買賣平台為宗旨。嚴選優良店家與車輛為消費者把
-						關，並搭配實價登錄、里程查詢、車身號碼驗證與下架不
-						實低價車等首創服務，提供消費這安心信賴的優質購車環
-						境。攜手Yahoo，Mobile01和PChome等各大網路龍頭
-						，並培植理念相同的優良中古車商，優先曝光實車實價與
-						第三方認證的優質車輛，加速成交。
-						期望與優質車商們共同打造消費者最值得信賴的中古車交
-						易平台，創造多贏的中古車市場。
-				</p>
-				<img class="main__image" src="images/mobile/circle.png" alt="circle"/>
-				<img class="main__image cross" src="images/mobile/phonePC.png" alt="PhonePC"/>
-				<a href="" class="main__link">＠bc好車網</a>
-				<a href="" class="main__link">＠bc車商專區下載</a>
+				</a>
 			</div>
-		</main>
-
-		<div class="feature">
-			<div class="container">
-				<p class="feature__title">
-						多元行銷團隊整合 創造服務價值
-				</p>
-				<p class="feature__paragraph">
-						我們有強大的資源外，更有不同領域的夥伴，在企劃內容
-						，市場策略，視覺創意，以及技術研發等，
-						以不同思考角度在各專業上提供更多的建議與想法，思考
-						如何為客戶創造更有效率及更精確的行銷服務，
-						達到最佳成果並延伸更多的服務價值
-				</p>
-				<img class="feature__image" src="images/mobile/feature.png" alt="feature"/>
-				<a href="" class="feature__link">聯絡我們</a>
-			</div>
+			<img src="images/mobile/abclogo.png" alt="abclogo" class="main__image main__image--logo imageContainer"/>
+			
+			<p class="main__title bold">
+					滿足你對"安心"的需求，也延伸你對
+					"車"與"生活"更多的想像
+			</p>
+			<p class="main__paragraph">
+					@bc好車網的成立以建構讓消費者安心、讓車商放心的
+					中古車買賣平台為宗旨。嚴選優良店家與車輛為消費者把
+					關，並搭配實價登錄、里程查詢、車身號碼驗證與下架不
+					實低價車等首創服務，提供消費這安心信賴的優質購車環
+					境。攜手Yahoo，Mobile01和PChome等各大網路龍頭
+					，並培植理念相同的優良中古車商，優先曝光實車實價與
+					第三方認證的優質車輛，加速成交。
+					期望與優質車商們共同打造消費者最值得信賴的中古車交
+					易平台，創造多贏的中古車市場。
+			</p>
+			<img src="images/mobile/circle.png" alt="circle" class="main__image imageContainer" />
+			<img src="images/mobile/phonePC.png" alt="PhonePC" class="main__image imageContainer cross" />
+			<img src="images/computer.png" alt="pc" class="main__pc imageContainer"/>
+			<a href="" class="main__link remain">＠bc好車網 網站</a>
+			<img src="images/phone.png" alt="phone" class="main__phone imageContainer"/>
+			<a href="" class="main__link">＠bc好車網</a>
+			<a href="" class="main__link">＠bc車商專區下載</a>
 		</div>
+	</main>
 
-		<div class="map">
-			<div class="container">
-				<div class="map__imageContainer">
-						<img src="images/mobile/map.png" alt="map-mobile" class="map__map-mobile"/>
-						<img src="images/map.png" alt="map-pc" class="map__map-pc"/>
-						<p class="map__title">
-								Contact US
-						</p>
-						<p class="map__paragraph">
-								新北市新莊區明中街10號<br>
-								02-2502-2121分機2160<br>
-								xxxxxx@mail.hotaimotor.com.tw<br>
-						</p>
-				</div>				
-			</div>
+	<div class="feature">	
+		<div class="textContainer">	
+			<p class="feature__title">
+					多元行銷團隊整合 創造服務價值
+			</p>
+			<p class="feature__paragraph">
+					我們有強大的資源外，更有不同領域的夥伴，在企劃內容
+					，市場策略，視覺創意，以及技術研發等，
+					以不同思考角度在各專業上提供更多的建議與想法，思考
+					如何為客戶創造更有效率及更精確的行銷服務，
+					達到最佳成果並延伸更多的服務價值
+			</p>
+			<img class="feature__image imageContainer" src="images/mobile/feature.png" alt="feature"/>
+			<a href="" class="feature__link">聯絡我們</a>
 		</div>
+	</div>
 
-		<footer class="footer">
-			<div class="container">
-				<img class="footer__brand-mobile" src="images/mobile/brand.png" alt="brand-mobile"/>
-				<img class="footer__brand-pc" src="images/brand.png" alt="brand-pc"/>
-				<p class="footer__copyright">
-						© 和泰聯網股份有限公司 Corporation All Rights Reserved
-				</p>
-			</div>
-		</footer>
-		<script src="js/main.js"></script>
+	<div class="map">
+		<div class="map__imageContainer textContainer">
+			<img src="images/mobile/map.png" alt="map-mobile" class="map__map-mobile imageContainer"/>
+			<img src="images/map.png" alt="map-pc" class="map__map-pc imageContainer"/>
+			<p class="map__title">
+					Contact US
+			</p>
+			<p class="map__paragraph">
+					新北市新莊區明中街10號<br>
+					02-2502-2121分機2160<br>
+					xxxxxx@mail.hotaimotor.com.tw<br>
+			</p>
+		</div>				
+	</div>
+
+	<footer class="footer">
+		<div class="textContainer">
+			<img class="footer__brand-mobile imageContainer" src="images/mobile/brand.png" alt="brand-mobile"/>
+			<img class="footer__brand-pc imageContainer" src="images/brand.png" alt="brand-pc"/>
+			<p class="footer__copyright">
+					© 和泰聯網股份有限公司 Corporation All Rights Reserved
+			</p>
+		</div>
+	</footer>
+
+	<script src="js/main.js"></script>
 </body>
 </html>
