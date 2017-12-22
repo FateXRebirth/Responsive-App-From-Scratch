@@ -1,21 +1,19 @@
-var menu = document.getElementsByClassName('nav__menu')[0];
-var close = document.getElementsByClassName('nav__close')[0];
-var nav = document.getElementsByClassName('menu')[0];
+document.addEventListener('DOMContentLoaded', function () {
+    let wrapper = document.getElementById('wrapper');
+    let topLayer = wrapper.querySelector('.top');
+    let handle = wrapper.querySelector('.handle');
+    let skew = 0;
+    let delta = 0;
 
-menu.addEventListener('click', openMenu);
-close.addEventListener('click', closeMenu);
+    if (wrapper.className.indexOf('skewed') != -1) {
+        skew = 1000;
+    }
 
-function openMenu(event) {
-    event.preventDefault();
-    menu.setAttribute('class','nav__menu unclicked');
-    close.setAttribute('class', 'nav__close clicked');
-    nav.setAttribute('class', 'menu active');
-}
+    wrapper.addEventListener('mousemove', function (e) {
+        delta = (e.clientX - window.innerWidth / 2) * 0.5;
 
-function closeMenu(event) {
-    event.preventDefault();
-    menu.setAttribute('class','nav__menu clicked');
-    close.setAttribute('class', 'nav__close unclicked');
-    nav.setAttribute('class', 'menu inactive');
-}
+        handle.style.left = e.clientX + delta + 'px';
 
+        topLayer.style.width = e.clientX + skew + delta + 'px';
+    });
+});
