@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Split Screen Slider</title>
+	<title>Simple Modal</title>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,29 +11,13 @@
 </head>
 
 <body>
-	<section id="wrapper" class="skewed">
-		<div class="layer bottom">
-			<div class="content-wrap">
-				<div class="content-body">
-					<h1>Look Sharp</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam temporibus dolore vero reiciendis atque debitis. Sequi at consequatur deserunt?</p>
-				</div>
-				<img src="http://cwsmgmt.corsair.com/media/catalog/product/6/0/600t_silver_heroclosed.png" alt="" />
-			</div>
+	<button id="modalBtn" class="button">Click Here</button>
+	<div id="simpleModal" class="modal">
+		<div class="modal-content">
+			<span class="closeBtn">&times;</span>
+			<p>Hello ... I am a Modal</p>
 		</div>
-	
-		<div class="layer top">
-			<div class="content-wrap">
-				<div class="content-body">
-					<h1>Stay Cool</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quisquam temporibus dolore vero reiciendis atque debitis. Sequi at consequatur deserunt?</p>
-				</div>
-				<img src="http://www.corsair.com/~/media/corsair/product-photo-root/6/600tm_3qtr_up.png" alt="" />
-			</div>
-		</div>
-	
-		<div class="handle"></div>		
-
+	</div>
 	<script src="js/main.js"></script>
 </body>
 </html>

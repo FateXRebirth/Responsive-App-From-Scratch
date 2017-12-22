@@ -1,19 +1,24 @@
-document.addEventListener('DOMContentLoaded', function () {
-    let wrapper = document.getElementById('wrapper');
-    let topLayer = wrapper.querySelector('.top');
-    let handle = wrapper.querySelector('.handle');
-    let skew = 0;
-    let delta = 0;
+// Get modal elemnt
+var modal = document.getElementById('simpleModal');
+// Get open modal button
+var modalBtn = document.getElementById('modalBtn');
+// Get close modal button
+var closeBtn = document.getElementsByClassName('closeBtn')[0];
 
-    if (wrapper.className.indexOf('skewed') != -1) {
-        skew = 1000;
-    }
+// Listen for event
+modalBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', clickOutside);
 
-    wrapper.addEventListener('mousemove', function (e) {
-        delta = (e.clientX - window.innerWidth / 2) * 0.5;
-
-        handle.style.left = e.clientX + delta + 'px';
-
-        topLayer.style.width = e.clientX + skew + delta + 'px';
-    });
-});
+// Function to open modal
+function openModal(event) {
+    modal.style.display = 'block';
+}
+// Function to close modal
+function closeModal(event) {
+    modal.style.display = 'none';
+}
+// Function to close modal if outside click
+function clickOutside(event) {
+    if(event.target == modal) modal.style.display = "none";
+}
