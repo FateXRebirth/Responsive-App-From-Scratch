@@ -1,0 +1,67 @@
+.header {
+    .slide {
+        display: none;
+        position: fixed;
+        z-index: 100000;
+        height: 100%;
+        width: 100%;
+        background-color: #B3B6B6;
+        a {
+            color: white;
+            font-size: 20px;
+            text-decoration: unset;
+            width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+        & .home {
+            color: white;
+            font-size: 40px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        &__list {
+            list-style: none;
+            padding: 0;
+        }
+        & .dropdown-item {
+            position: relative;
+            margin: 10px 0px;
+            a {
+                cursor: pointer;
+            }
+            & .arrow {
+                position: absolute;
+                top: 10px;
+                margin-left: 5px;
+                width: 1.5%;
+                height: auto;
+            } 
+            &--circle {
+                border: 1px white solid;
+                width: 200px;
+                border-radius: 50px;
+                margin: 0 auto;
+                margin-top: 50px;
+                padding: 5px 0px;
+                & .arrow2 {
+                    color: white;
+                    padding-left: 10px;
+                    font-size: 20px;
+                }
+            }
+        }
+        & .dropdown-content {
+            width: 200px;
+            padding: 5px 0px;
+            margin: 5px auto;
+            border: 1px white solid;
+            border-left: 0;
+            border-right: 0;
+            a {
+                padding: 5px 0px;
+            }
+            display: none;
+        }
+    }
+}
