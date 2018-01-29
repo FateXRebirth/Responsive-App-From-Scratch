@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/plugin.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/plugin.min.js"></script>
+    <script src="js/main.min.js"></script>
 </head>
 
 <body>
     <header class="header">
         <nav class="nav">
-            <a href="" class="link"></a><img src="/images/logo.png" alt="" class="logo"></a>
-            <i class="fa fa-bars menus" aria-hidden="true"></i>
-            <aside class="slide text-center">
-                <i class="fa fa-home home" aria-hidden="true"></i>
+            <a href="" class="link"><img src="/images/logo.png" alt="" class="logo"></a>
+            <i class="fa fa-bars menu" aria-hidden="true"></i>
+            <aside class="aside text-center">
+                <i class="ion-home home" aria-hidden="true"></i>
+                <i class="ion-close close"></i>
                 <ul class="slide__list">
                     <li class="dropdown-item">
                         <a>關於我們<img src="/images/menu-close.png" alt="" class="arrow"></a>
@@ -64,21 +67,73 @@
                 </ul>
             </aside>
         </nav>
-        <nav class="navbar">
-
-        </nav>
+        <section class="slideshow">
+            <i class="ion-chevron-left arrow-left"></i>
+            <div class="slider">
+                <div><img class="images" src="/images/26.jpg"></div>
+                <div><img class="images" src="/images/27.jpg"></div>
+                <div><img class="images" src="/images/28.jpg"></div>
+                <div><img class="images" src="/images/29.jpg"></div>
+            </div>
+            <i class="ion-chevron-right arrow-right"></i>
+        </section>
     </header>
+    
     <main class="main">
-         <section class="new"></section>
-         <section class="event"></section>
-         <section class="item"></section>
+         <section class="news">
+             <div class="container">
+                <h3 class="news__topic"> Press Releases </h3>
+                <div class="row">
+                    <div class="col-xs-6 col-ms-6 col-md-3 col-lg-3">
+                        <div class="container__cards">
+                            <div class="container__cards__img"><img src="/images/73.jpg" alt=""></div>
+                            <div class="container__cards__text">
+                                <p class="date">2017/11/11</p>
+                                <p class="title">喜馬拉雅藝術 大勢延燒 焦點拍品 重量登場</p>
+                                <a href="" class="link">MORE</a>
+                            </div>                     
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-ms-6 col-md-3 col-lg-3">
+                        <div class="container__cards">
+                            <div class="container__cards__img"><img src="/images/0.jpg" alt=""></div>
+                            <div class="container__cards__text">
+                                <p class="date">2017/11/14</p>
+                                <p class="title">書畫鑑賞家徐小虎訪談-野間佳子</p>
+                                <a href="" class="link">MORE</a>
+                            </div>                     
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-ms-6 col-md-3 col-lg-3">
+                        <div class="container__cards">
+                            <div class="container__cards__img"><img src="/images/56.jpg" alt=""></div>
+                            <div class="container__cards__text">
+                                <p class="date">2016/11/02</p>
+                                <p class="title">中國時報2016年10月23日 藝術典藏圖</p>
+                                <a href="" class="link">MORE</a>
+                            </div>                     
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-ms-6 col-md-3 col-lg-3">
+                        <div class="container__cards">
+                            <div class="container__cards__img"><img src="/images/54.jpg" alt=""></div>
+                            <div class="container__cards__text">
+                                <p class="date">2016/11/02</p>
+                                <p class="title">CANS藝術新聞No.226(2016-11) 台北德門</p>
+                                <a href="" class="link">MORE</a>
+                            </div>                     
+                        </div>
+                    </div>
+                    <a href="" class="news__btn text-center">VIEW ALL</a>            
+                </div>
+            </div>
+        </section>
+        <section class="event"></section>
+        <section class="item"></section>
     </main>
     <footer class="footer">
         <div class="social"></div>
         <div class="detail"></div>
     </footer>
-    
-    <script src="js/plugin.min.js"></script>
-    <script src="js/main.min.js"></script>
 </body>
 </html>

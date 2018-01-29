@@ -18,13 +18,12 @@ const Header = require('gulp-header');
 const Merge = require('merge-stream');
 const Fs = require('fs');
 
+var env = JSON.parse(Fs.readFileSync('.env.json'));
+
 // Initialization
 var root = '/';
 var src = 'source';
 var dest = 'public';
-var env = {
-    isProduction: false
-}
 
 // Watch & Serve
 gulp.task('serve', () => {
@@ -46,6 +45,7 @@ gulp.task('Sass(style.css)', () => {
         this.emit('end');
     }))
     .pipe(Sass())
+    .pipe(Autoprefixer(eval(env.autoprefixer)))
     .pipe(If(!env.isProduction, Sourcemaps.init()))
     .pipe(If(!env.isProduction, Sourcemaps.write()))
     .pipe(gulp.dest(dest + '/css'))
@@ -55,9 +55,11 @@ gulp.task('Sass(style.css)', () => {
 // Compile Sass for third-party css
 gulp.task('Sass(plugin.css)', () => {
     return gulp.src([
-        'bower_components/bootstrap/dist/css/bootstrap.min.css',
+        //'bower_components/bootstrap/dist/css/bootstrap.min.css',
         'bower_components/font-awesome/css/font-awesome.min.css',
-        'bower_components/Ionicons/css/ionicons.min.css'],
+        'bower_components/Ionicons/css/ionicons.min.css',
+        'bower_components/slick-carousel/slick/slick.css',
+        'bower_components/slick-carousel/slick/slick-theme.css'],
         { base: 'bower_components/' }
     )
     .pipe(Concat('plugin.css'))
@@ -81,7 +83,8 @@ gulp.task('Minify(main.js)', () => {
 gulp.task('Minify(plugin.js)', () => {
     return gulp.src([
         'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/bootstrap/dist/js/bootstrap.min.js'],
+        //'bower_components/bootstrap/dist/js/bootstrap.min.js',
+        'bower_components/slick-carousel/slick/slick.min.js'],
         { base: 'bower_components/' }
     )
     .pipe(Concat('plugin.min.js'))
