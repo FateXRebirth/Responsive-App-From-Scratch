@@ -49,6 +49,13 @@
 .row {
     margin-right: -15px;
     margin-left: -15px;
+    &:after {
+        content: ".";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        clear: both;
+    }
 }
 
 .col-xs-1,
