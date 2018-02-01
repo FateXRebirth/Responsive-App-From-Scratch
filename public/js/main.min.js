@@ -5,7 +5,8 @@ $(document).ready(function () {
     })
 
     $('.menu').on('click', function() {
-        $('.aside').css('display', 'block');
+        //$('.aside').css('display', 'block');
+        $('.aside')[0].style.display = "block";
     })
     
     $('.close').on('click', function() {
@@ -38,6 +39,19 @@ $(document).ready(function () {
 
     $('.arrow-right').on('click', function() {
         $('.slider').slick('slickNext');
+    })
+
+    $(window).scroll(function(e) {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("scrollBtn").style.display = "block";
+        } else {
+            document.getElementById("scrollBtn").style.display = "none";
+        }
+    })
+
+    $('#scrollBtn').on('click', function(e) {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     })
     
 });
