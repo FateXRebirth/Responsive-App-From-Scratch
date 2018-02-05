@@ -48,6 +48,7 @@ gulp.task('Sass(style.css)', () => {
     .pipe(Autoprefixer(eval(env.autoprefixer)))
     .pipe(If(!env.isProduction, Sourcemaps.init()))
     .pipe(If(!env.isProduction, Sourcemaps.write()))
+    .pipe(If(env.isProduction, CleanCSS({ compatibility: 'ie8' })))
     .pipe(gulp.dest(dest + '/css'))
     .pipe(BrowserSync.stream());
 })
@@ -55,16 +56,21 @@ gulp.task('Sass(style.css)', () => {
 // Compile Sass for third-party css
 gulp.task('Sass(plugin.css)', () => {
     return gulp.src([
-        'bower_components/normalize-css/normalize.css',
-        'bower_components/font-awesome/css/font-awesome.min.css',
-        'bower_components/Ionicons/css/ionicons.min.css',
+        'bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css',
+        'bower_components/font-awesome/css/font-awesome.css',
+        'bower_components/Ionicons/css/ionicons.css',
         'bower_components/slick-carousel/slick/slick.css',
-        'bower_components/slick-carousel/slick/slick-theme.css'],
+        'bower_components/slick-carousel/slick/slick-theme.css',
+        'bower_components/normalize-css/normalize.css',
+        'bower_components/bootstrap4/dist/css/bootstrap.css',
+        'bower_components/fullpage.js/dist/jquery.fullpage.css',
+        'bower_components/hover/css/hover.css'],
         { base: 'bower_components/' }
     )
     .pipe(Concat('plugin.css'))
     .pipe(If(!env.isProduction, Sourcemaps.init()))
     .pipe(If(!env.isProduction, Sourcemaps.write()))
+    .pipe(If(env.isProduction, CleanCSS({ compatibility: 'ie8' })))
     .pipe(gulp.dest(dest + '/css'))
     .pipe(BrowserSync.stream());
 })
@@ -74,7 +80,7 @@ gulp.task('Minify(main.js)', () => {
     return gulp.src([
             src + '/js/main.js'
         ])
-    .pipe(Concat('main.min.js'))
+    .pipe(Concat('main.js'))
     .pipe(If(env.isProduction, Uglify()))
     .pipe(gulp.dest(dest + '/js'));
 });
@@ -82,12 +88,17 @@ gulp.task('Minify(main.js)', () => {
 // Compile for third-party javascript file
 gulp.task('Minify(plugin.js)', () => {
     return gulp.src([
-        'bower_components/jquery/dist/jquery.min.js',
-        'bower_components/slick-carousel/slick/slick.min.js',
-        'bower_components/holderjs/holder.js'],
+        'bower_components/jquery/dist/jquery.js',
+        'bower_components/jquery-ui/jquery-ui.js',
+        'bower_components/slick-carousel/slick/slick.js',
+        'bower_components/holderjs/holder.js',
+        'bower_components/bootstrap4/dist/js/bootstrap.js',
+        'bower_components/fullpage.js/dist/jquery.fullpage.js',
+        'bower_components/lodash/dist/lodash.js',
+        'bower_components/PACE/pace.js'],
         { base: 'bower_components/' }
     )
-    .pipe(Concat('plugin.min.js'))
+    .pipe(Concat('plugin.js'))
     .pipe(If(env.isProduction, Uglify()))
     .pipe(gulp.dest(dest + '/js'));
 });

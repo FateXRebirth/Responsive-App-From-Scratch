@@ -6,99 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/plugin.css">
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/plugin.min.js"></script>
-    <script src="js/main.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body>
-    
     <div id="loader-wrapper">
-        <div id="loader">
-        </div>
+        <div class="loader"></div>
+        <div class="percentage">0%</div>
     </div>
+    <img id="img" src="https://www.nasa.gov/sites/default/files/thumbnails/image/hs-2015-02-a-hires_jpg.jpg">
 
-    <div id="main">
-        <div class="inline-navbar">
-            <ul class="container"><li class="item1"><a href="#">Function Declaration</a></li><li class="item2"><a href="#">Function Expression</a></li><li class="item3"><a href="#">What you need to dive in</a></li><li class="item4"><a href="#">Performance</a></li><li class="item5"><a href="#">Resources</a></li></ul>
-        </div>
-
-        <div class="container">
-
-            <div class="empty"></div>
-
-            <h1 class="title title-1">
-                Function Declaration
-            </h1>
-            <p class="content">
-                All functions require the function keyword (prior to ES6). Function declarations require a name after that keyword ( foo). They cannot be anonymous functions (functions without a name will throw an error).
-            </p>
-
-            <h1 class="title title-2">
-                Function Expression
-            </h1>
-            <p class="content">
-                A variable called foo was declared and assigned to an anonymous function (although we could’ve given it a name).
-                Note: Function expressions end with semicolons, declarations do not.
-            </p>
-
-            <h1 class="title title-3">
-                What you need to dive in
-            </h1>
-            <p class="content">
-                A text editor and a Haskell compiler. You probably already have your favorite text editor installed so we won't waste time on that. For the purposes of this tutorial we'll be using GHC, the most widely used Haskell compiler. The best way to get started is to download the Haskell Platform, which is basically Haskell with batteries included.
-
-                GHC can take a Haskell script (they usually have a .hs extension) and compile it but it also has an interactive mode which allows you to interactively interact with scripts. Interactively. You can call functions from scripts that you load and the results are displayed immediately. For learning it's a lot easier and faster than compiling every time you make a change and then running the program from the prompt. The interactive mode is invoked by typing in ghci at your prompt. If you have defined some functions in a file called, say, myfunctions.hs, you load up those functions by typing in :l myfunctions and then you can play with them, provided myfunctions.hs is in the same folder from which ghci was invoked. If you change the .hs script, just run :l myfunctions again or do :r, which is equivalent because it reloads the current script. The usual workflow for me when playing around in stuff is defining some functions in a .hs file, loading it up and messing around with them and then changing the .hs file, loading it up again and so on. This is also what we'll be doing here.
-            </p>
-
-            <h1 class="title title-4">
-                Performance
-            </h1>
-            <p class="content">
-                A compiled language will have better performance at run-time if it’s statically typed because the knowledge of types allows for machine code optimization.
-
-                Statically typed languages have better performance at run-time intrinsically due to not needing to check types dynamically while executing (it checks before running).
-                
-                Similarly, compiled languages are faster at run time as the code has already been translated instead of needing to “interpret”/translate it on the fly.
-                
-                Note that both compiled and statically typed languages will have a delay before running for translation and type-checking, respectively.
-            </p>
-
-            <h1 class="title title-5">
-                Resources
-            </h1>
-            <p class="content">
-                The relevant reading for this project is Chapter 1 and Appendix A. Specifically, all the chips described in Chapter 1 should be implemented in the Hardware Description Language (HDL) specified in Appendix A. Another resource that you will find handy in this and in all subsequent hardware projects is this HDL Survival Guide, written by Mark Armbrust.
-
-                For each chip, we supply a skeletal .hdl file with a place holder for a missing implementation part. In addition, for each chip we supply a .tst script that instructs the hardware simulator how to test it, and a .cmp ("compare file") containing the correct output that this test should generate. Your job is to complete and test the supplied skeletal .hdl files.
-                
-                If you've downloaded the Nand2Tetris Software Suite, you will find the supplied Hardware Simulator and all the necessary project files in the tools and in the projects/01 directories, respectively. To get acquainted with the Hardware Siumlator, go through parts I-II-III of the supplied Hardware Simulator Tutorial (PowerPoint Format Portable Document Format )
-            </p>
-
-
-            <div class="hidden-wrapper">
-                <p class="content">
-                    If you have certain pages on your website that take some time to load, you may want to consider a page loader. A page loader is any kind of animation that visually communicates to a visitor that the page is loading and to just sit tight for a few seconds. Without a page loader, a visitor might think your site is being unresponsive and just click away in frustration. A page loader also provides a small distraction which can actually makes the wait seem much shorter.
-
-                    If your page loading delay is caused by something like a database read, it is likely that the visitor remains on the current page until the page they are trying to go to is loaded. This is different than a page loading delay like large images, where the visitor would get to the page before the delays. It is the former scenario where a CSS page loader can work very well. Here is how you do it:
-                </p>
-            </div>
-            <div id="show">Show all</div>
-
-            <div class="empty"></div>
-        </div>
-
-        <div class="float-navbar">
-            <ul class="container">
-                <li class="item1"><a href="#">Function Declaration</a></li>
-                <li class="item2"><a href="#">Function Expression</a></li>
-                <li class="item3"><a href="#">What you need to dive in</a></li>
-                <li class="item4"><a href="#">Performance</a></li>
-                <li class="item5"><a href="#">Resources</a></li>
-            </ul>
-        </div>
-    </div>
-    
+   
 </body>
 </html>

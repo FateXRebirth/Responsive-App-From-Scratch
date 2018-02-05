@@ -16,13 +16,17 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.2.1",
     "font-awesome": "fontAwesome#^4.7.0",
     "Ionicons": "ionicons#^2.0.1",
-    "bootstrap": "^3.3.7",
-    "holderjs": "^2.9.4",
     "normalize-css": "^7.0.0",
+    "bootstrap4": "^4.0.0", 
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
     "hover": "^2.1.1",
-    "slick-carousel": "^1.8.1"
+    "holderjs": "^2.9.4",
+    "slick-carousel": "^1.8.1",
+    "lodash": "^4.17.5",
+    "PACE": "pace#^1.0.2",
+    "fullpage.js": "fullpage#^2.9.6"
   }
 }
