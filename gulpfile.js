@@ -64,6 +64,7 @@ gulp.task('Sass(plugin.css)', () => {
         'bower_components/normalize-css/normalize.css',
         'bower_components/bootstrap4/dist/css/bootstrap.css',
         'bower_components/fullpage.js/dist/jquery.fullpage.css',
+        'bower_components/PACE/themes/blue/pace-theme-center-radar.css',
         'bower_components/hover/css/hover.css'],
         { base: 'bower_components/' }
     )

@@ -1,0 +1,7 @@
+.pace-activity {
+    box-sizing: unset;
+    &:before , &:after {
+        box-sizing: unset;
+
+    }
+}
