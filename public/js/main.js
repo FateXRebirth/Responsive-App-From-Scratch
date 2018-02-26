@@ -14,7 +14,7 @@ $(document).ready(function () {
         console.log("After 5 seconds...");
 	}, 5000);
 	
-    $('#fullpage').fullpage({});
+    
 
 });
 
