@@ -4,85 +4,131 @@
     box-sizing: border-box;
 }
 
-body {
+:root {
+    --container-bg-color:#333;
+    --left-bg-color: rgba(223, 39, 39, 0.7);
+    --left-button-hover-color: rgba(161, 11, 11, 0.3);
+    --right-bg-color: rgba(43, 43, 43, 0.8);
+    --right-button-hover-color: rgba(92, 92, 92, 0.3);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+}
+
+html, body {
+    padding: 0;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #333;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    height: 100%;
     overflow-x: hidden;
 }
 
-.v-header {
-    height: 100vh;
-    display: flex;
-    align-items: center;
+h1 {
+    font-size: 4rem;
     color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.button {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    height: 4rem;
+    padding-top: 1rem;
+    width: 15rem;
+    text-align: center;
+    color: #fff;
+    border: #fff solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: unset;
+    transform: translateX(-50%);
+}
+
+.split.left .button:hover {
+    background-color: var(--left-button-hover-color);
+    border-color: var(--left-button-hover-color);
+}
+
+.split.right .button:hover {
+    background-color: var(--right-button-hover-color);
+    border-color: var(--right-button-hover-color);
 }
 
 .container {
-    max-width: 960px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin: auto;
-    text-align: center;
+    max-width: unset;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--container-bg-color);
 }
 
-.fullscreen-video-wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+.split {
+    position: absolute;;
+    width: 50%;
+    height: 100%;
     overflow: hidden;
-    & video {
-        min-width: 100%;
-        min-height: 100%;
+    &.left {
+        left: 0;
+        background: url('../images/designer.jpg') center center no-repeat;
+        background-size: cover;
+        &:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: var(--left-bg-color);
+        }
+    }
+    &.right {
+        right: 0;
+        background: url('../images/programmer.png') center center no-repeat;
+        background-size: cover;
+        &:before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: var(--right-bg-color);
+        }
     }
 }
 
-.header-overlay {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #225470;
-    z-index: 1;
-    opacity: 0.7;
+.split.left, .split.right, .split.left:before, .split.right:before {
+    transition: var(--speed) all ease-in-out;
 }
 
-.header-content {
-    z-index: 2;
-    & h1 {
-        font-size: 50px;
-        margin-bottom: 0;
-    }
-    & p {
-        font-size: 1.5rem;
-        display: block;
-        padding-bottom: 2rem;
-    }
-    & .btn {
-        background: #34b3a0;
-        color: #fff;
-        font-size: 1.2rem;
-        padding: 1rem 2rem;
-        text-decoration: unset;
+.hover {
+    &-left {
+        & .left {
+            width: var(--hover-width);
+        }
+        & .right {
+            width: var(--other-width);
+            &:before {
+                z-index: 2;
+            }
+        }
     }
 }
 
-.section {
-    padding: 20px 0;
-    &.section-b {
-        background: #333;
-        color: #fff;
-    }
-}
-
-@media(max-width: 960px) {
-    .container {
-        padding-left: 3rem;
-        padding-right: 3rem;
+.hover {
+    &-right {
+        & .left {
+            width: var(--other-width);
+            &:before {
+                z-index: 2;
+            }
+        }
+        & .right {
+            width: var(--hover-width);     
+        }
     }
 }
