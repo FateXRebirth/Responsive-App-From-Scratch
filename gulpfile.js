@@ -17,11 +17,12 @@ const Spritesmith = require('gulp.spritesmith');
 const Header = require('gulp-header');
 const Merge = require('merge-stream');
 const Fs = require('fs');
+const del = require('del');
 
 var env = JSON.parse(Fs.readFileSync('.env.json'));
 
 // Initialization
-var root = '/';
+var root = './';
 var src = 'source';
 var dest = 'public';
 
@@ -30,8 +31,8 @@ gulp.task('serve', () => {
     BrowserSync.init({
         server: 'public'
     });
-    gulp.watch([src + '/sass/*.scss'], ['Sass(style.css)']);
-    gulp.watch([src + '/js/*.js'], ['Minify(main.js)']);
+    gulp.watch([src + '/sass/*.scss'], gulp.series('Sass(style.css)'));
+    gulp.watch([src + '/js/*.js'], gulp.series('Minify(main.js)'));
     gulp.watch([dest + '/js/*.js']).on('change', BrowserSync.reload);
     gulp.watch([dest + '/*.html']).on('change', BrowserSync.reload);
 })
@@ -56,16 +57,8 @@ gulp.task('Sass(style.css)', () => {
 // Compile Sass for third-party css
 gulp.task('Sass(plugin.css)', () => {
     return gulp.src([
-        'bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css',
-        'bower_components/font-awesome/css/font-awesome.css',
         'bower_components/Ionicons/css/ionicons.css',
-        'bower_components/slick-carousel/slick/slick.css',
-        'bower_components/slick-carousel/slick/slick-theme.css',
-        'bower_components/normalize-css/normalize.css',
-        'bower_components/bootstrap4/dist/css/bootstrap.css',
-        'bower_components/fullpage.js/dist/jquery.fullpage.css',
-        'bower_components/PACE/themes/blue/pace-theme-center-radar.css',
-        'bower_components/hover/css/hover.css'],
+        'bower_components/jquery-ui/themes/ui-lightness/jquery-ui.css'],
         { base: 'bower_components/' }
     )
     .pipe(Concat('plugin.css'))
@@ -91,12 +84,7 @@ gulp.task('Minify(plugin.js)', () => {
     return gulp.src([
         'bower_components/jquery/dist/jquery.js',
         'bower_components/jquery-ui/jquery-ui.js',
-        'bower_components/slick-carousel/slick/slick.js',
-        'bower_components/holderjs/holder.js',
-        'bower_components/bootstrap4/dist/js/bootstrap.js',
-        'bower_components/fullpage.js/dist/jquery.fullpage.js',
-        'bower_components/lodash/dist/lodash.js',
-        'bower_components/PACE/pace.js'],
+        'bower_components/lodash/dist/lodash.js'],
         { base: 'bower_components/' }
     )
     .pipe(Concat('plugin.js'))
@@ -105,4 +93,4 @@ gulp.task('Minify(plugin.js)', () => {
 });
 
 // Default 
-gulp.task('default', ['serve', 'Sass(style.css)', 'Sass(plugin.css)', 'Minify(main.js)', 'Minify(plugin.js)']);
+gulp.task('default', gulp.parallel('serve', 'Sass(style.css)', 'Sass(plugin.css)', 'Minify(main.js)', 'Minify(plugin.js)'));
