@@ -1,0 +1,62 @@
+// Extra small devices (portrait phones, less than 576px)
+@mixin MediaQueryXS {
+    @media screen and (max-width: 575.99px) { 
+        @content;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@mixin MediaQuerySM {
+    @media screen and (min-width: 576px) and (max-width: 767.99px) { 
+        @content;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin MediaQueryMD {
+    @media screen and (min-width: 768px) and (max-width: 991.99px) { 
+        @content;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@mixin MediaQueryLG {
+    @media screen and (min-width: 992px) and (max-width: 1199.99px) { 
+        @content;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@mixin MediaQueryXL {
+    @media screen and (min-width: 1200px) { 
+        @content;
+    }
+}
+
+// Applying this query when width less than given parameter
+@mixin MediaQueryLess($pixel) {
+    @media screen and (max-width: $pixel) {
+        @content;
+    }
+}
+
+// Applying this query when width more than given parameter
+@mixin MediaQueryMore($pixel) {
+    @media screen and (min-width: $pixel) {
+        @content;
+    }
+}
+
+@mixin TextShadow($width, $color) {
+    // -webkit-text-stroke: <width> <color>
+    -moz-text-stroke: $width $color;
+    -webkit-text-stroke: $width $color;
+    text-stroke: $width $color;
+}
+
+@mixin BoxShadow($h_offset, $v_offset, $blur: 0px, $spread: 0px, $color: #ccc) {
+    // box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
+    -moz-box-shadow: $h_offset $v_offset $blur $spread $color;
+    -webkit-box-shadow: $h_offset $v_offset $blur $spread $color;
+    box-shadow: $h_offset $v_offset $blur $spread $color;
+}

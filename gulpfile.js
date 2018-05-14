@@ -19,12 +19,13 @@ const Merge = require('merge-stream');
 const Fs = require('fs');
 const del = require('del');
 
-var env = JSON.parse(Fs.readFileSync('.env.json'));
+const env = JSON.parse(Fs.readFileSync('.env.json'));
 
 // Initialization
-var root = './';
-var src = 'source';
-var dest = 'public';
+const root = './';
+const src = 'source';
+const dest = 'public';
+const backup = 'backup';
 
 // Watch & Serve
 gulp.task('serve', () => {
@@ -91,6 +92,52 @@ gulp.task('Minify(plugin.js)', () => {
     .pipe(If(env.isProduction, Uglify()))
     .pipe(gulp.dest(dest + '/js'));
 });
+
+gulp.task('backup', (done) => {
+    // bower
+    gulp.src([root + 'bower.json'])
+        .pipe(gulp.dest(backup));
+    // source
+    gulp.src([root + 'source/**/*.*'])
+        .pipe(gulp.dest(backup + '/source'));
+    // public 
+    gulp.src([root + 'public/**/*.*'])
+        .pipe(gulp.dest(backup + '/public'));
+    done();
+});
+
+gulp.task('delete', () => {
+    return del([
+        root + 'bower.json',
+        root + 'source',
+        root + 'public',
+    ]);
+})
+
+gulp.task('recover', (done) => {
+    // bower
+    gulp.src([root + 'backup/bower.json'])
+        .pipe(gulp.dest(root));
+    // css
+    gulp.src([root + 'backup/source/sass/*.scss'])
+        .pipe(gulp.dest(root + 'source/sass'));
+    // js
+    gulp.src([root + 'backup/source/js/*.js'])
+        .pipe(gulp.dest(root + 'source/js'));
+    // images 
+    gulp.src([root + 'backup/public/images/*.+(jpg|jpeg|gif|png)'])
+        .pipe(gulp.dest(root + 'public/images'));
+    // font
+    gulp.src([root + 'backup/public/fonts/*.+(eot|svg|ttf|woff)'])
+        .pipe(gulp.dest(root + 'public/fonts'));
+    // html 
+    gulp.src([root + 'backup/public/*.html'])
+        .pipe(gulp.dest(root + 'public/'));
+    done();
+});
+
+// Restore 
+gulp.task('restore',gulp.series('delete', 'recover'))
 
 // Default 
 gulp.task('default', gulp.parallel('serve', 'Sass(style.css)', 'Sass(plugin.css)', 'Minify(main.js)', 'Minify(plugin.js)'));
