@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "npm install -g gulp && npm install -g gulp-cli && npm install && bower install && gulp backup"
+    "install": "npm install -g gulp@next && npm install && bower install"
   },
   "repository": {
     "type": "git",
