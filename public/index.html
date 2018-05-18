@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Grids</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/plugin.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 70% 30%;
+            /* grid-column-gap: 1em; */
+            /* grid-row-gap: 1em; */
+            grid-gap: 1em;
+        }
+
+        .wrapper > div {
+            background: #eee;
+            padding: 1em;
+        }
+
+        .wrapper > div:nth-child(odd) {
+            background: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam pariatur earum autem. Doloribus earum commodi aut esse! Distinctio nisi cupiditate iusto accusantium reiciendis suscipit natus voluptatum quas. Nam eos beatae rem perferendis laboriosam provident earum ea quaerat minus, dicta iusto sequi similique! Earum explicabo laudantium veritatis quia ipsam. Ipsum officiis explicabo ut quasi delectus iusto incidunt rerum ullam nisi facilis numquam voluptate nesciunt, praesentium officia necessitatibus amet cumque dolore quisquam illum aspernatur dolor sed porro deleniti possimus. In, quis totam.
+        </div>
+        <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim voluptates ipsa ut illo eligendi aliquam libero iure accusamus labore? Ipsa blanditiis doloremque accusantium a, officia quod facere rerum saepe?
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam pariatur earum autem. Doloribus earum commodi aut esse! Distinctio nisi cupiditate iusto accusantium reiciendis suscipit natus voluptatum quas. Nam eos beatae rem perferendis laboriosam provident earum ea quaerat minus, dicta iusto sequi similique! Earum explicabo laudantium veritatis quia ipsam. Ipsum officiis explicabo ut quasi delectus iusto incidunt rerum ullam nisi facilis numquam voluptate nesciunt, praesentium officia necessitatibus amet cumque dolore quisquam illum aspernatur dolor sed porro deleniti possimus. In, quis totam.
+        </div>
+        <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum enim voluptates ipsa ut illo eligendi aliquam libero iure accusamus labore? Ipsa blanditiis doloremque accusantium a, officia quod facere rerum saepe?
+        </div>
+    </div>
+    <script src="js/plugin.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
