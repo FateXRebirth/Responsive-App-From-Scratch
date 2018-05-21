@@ -6,3 +6,77 @@
 @import "header";
 @import "main";
 @import "footer";
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  color: #926239;
+  line-height: 1.6;
+}
+
+#showcase {
+  background-image: url('../images/showcase.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 50px;
+
+  h1 {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .button {
+    font-size: 18px;
+    text-decoration: none;
+    color: #926239;
+    border: 1px #926239 solid;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    &:hover {
+      background-color: #926239;
+      color: #fff;
+    }
+  }
+}
+
+#section-a {
+  padding: 20px;
+  background-color: #926239;
+  color: #fff;
+  text-align: center;
+}
+
+#section-b {
+  padding: 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+#section-c {
+  display: flex;
+
+  div {
+    padding: 20px;
+  }
+
+  .box-1, .box-3 {
+    background-color: #926239;
+    color: #fff;
+  }
+
+  .box-2 {
+    background-color: #f9f9f9;
+  }
+}
