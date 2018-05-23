@@ -7,76 +7,80 @@
 @import "main";
 @import "footer";
 
-body {
+body, html {
+  height: 100%;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  color: #926239;
-  line-height: 1.6;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: #666;
 }
 
-#showcase {
-  background-image: url('../images/showcase.jpg');
-  height: 100vh;
-  background-size: cover;
+.pimg1, .pimg2, .pimg3 {
+  position: relative;
+  opacity: 0.7;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  // background-attachment: scroll;
+  background-attachment: fixed;
+}
+
+.pimg1 {
+  background-image: url('../images/image1.jpg');
+  min-height: 100%;
+}
+
+.pimg2 {
+  background-image: url('../images/image2.jpg');
+  min-height: 400px;
+}
+
+.pimg3 {
+  background-image: url('../images/image3.jpg');
+  min-height: 400px;
+}
+
+.section {  
   text-align: center;
-  padding: 0 50px;
-
-  h1 {
-    font-size: 50px;
-    line-height: 1.2;
+  padding: 50px 80px;
+  
+  &-light {
+    background-color: #f4f4f4;
+    color: #666;
   }
 
-  p {
-    font-size: 20px;
-  }
-
-  .button {
-    font-size: 18px;
-    text-decoration: none;
-    color: #926239;
-    border: 1px #926239 solid;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    &:hover {
-      background-color: #926239;
-      color: #fff;
-    }
+  &-dark {
+    background-color: #282e34;
+    color: #ddd;
   }
 }
 
-#section-a {
-  padding: 20px;
-  background-color: #926239;
-  color: #fff;
+.ptext {
+  position: absolute;
+  top: 50%;
+  width: 100%;
   text-align: center;
-}
-
-#section-b {
-  padding: 20px;
-  background-color: #f4f4f4;
-  text-align: center;
-}
-
-#section-c {
-  display: flex;
-
-  div {
-    padding: 20px;
-  }
-
-  .box-1, .box-3 {
-    background-color: #926239;
+  color: #000;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  
+  .border {
+    background-color: #111;
     color: #fff;
-  }
+    padding: 20px;
 
-  .box-2 {
-    background-color: #f9f9f9;
+    &.trans {
+      background-color: transparent;
+    }
+
+  }
+}
+
+@media(max-width: 568px) {
+  .pimg1, .pimg2, .pimg3 {
+    background-attachment: scroll;
   }
 }
