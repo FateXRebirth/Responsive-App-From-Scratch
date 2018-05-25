@@ -7,80 +7,38 @@
 @import "main";
 @import "footer";
 
-body, html {
-  height: 100%;
-  margin: 0;
-  font-size: 16px;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.8em;
-  color: #666;
+body {
+  background-color: darksalmon;
 }
 
-.pimg1, .pimg2, .pimg3 {
+.fill {
+  background-image: url('https://source.unsplash.com/random/150x150');
   position: relative;
-  opacity: 0.7;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  // background-attachment: scroll;
-  background-attachment: fixed;
+  height: 150px;
+  width: 150px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
 }
 
-.pimg1 {
-  background-image: url('../images/image1.jpg');
-  min-height: 100%;
+.empty {
+  display: inline-block;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  border: 3px salmon solid;
+  background-color: white;
 }
 
-.pimg2 {
-  background-image: url('../images/image2.jpg');
-  min-height: 400px;
+.hold {
+  border: 4px #ccc solid;
 }
 
-.pimg3 {
-  background-image: url('../images/image3.jpg');
-  min-height: 400px;
+.hovered {
+  background: #f4f4f4;
+  border-style: dashed;
 }
 
-.section {  
-  text-align: center;
-  padding: 50px 80px;
-  
-  &-light {
-    background-color: #f4f4f4;
-    color: #666;
-  }
-
-  &-dark {
-    background-color: #282e34;
-    color: #ddd;
-  }
-}
-
-.ptext {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-  font-size: 27px;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-  
-  .border {
-    background-color: #111;
-    color: #fff;
-    padding: 20px;
-
-    &.trans {
-      background-color: transparent;
-    }
-
-  }
-}
-
-@media(max-width: 568px) {
-  .pimg1, .pimg2, .pimg3 {
-    background-attachment: scroll;
-  }
+.invisible {
+  display: none;
 }
