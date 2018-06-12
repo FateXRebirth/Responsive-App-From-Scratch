@@ -16,47 +16,24 @@ $(window).on('load', function() {
     console.log("Loaded");
 })
 
-const fill = document.querySelector('.fill');
-const empties = document.querySelectorAll('.empty');
+var animate = document.getElementById("animate");
 
-// Fill Listeners 
-fill.addEventListener('dragstart', dragStart);
-fill.addEventListener('dragend', dragEnd);
+animate.addEventListener("animationstart", (event) => {
+    console.log("animationstart")
+});
 
-// Loop through empties and call drag events
-for(const empty of empties) {
-    empty.addEventListener('dragover', dragOver);
-    empty.addEventListener('dragenter', dragEnter);
-    empty.addEventListener('dragleave', dragLeave);
-    empty.addEventListener('drop', dragDrop);
-}
+var order = 1;
+animate.addEventListener("animationiteration", function() {	
+    if(order < 5) {
+        order = order + 1;
+    } else {
+        order = 1;
+    }
+    var img = "images/icon" + order + ".png";
+    $(event.target).attr('src', img)
+});
 
-// Drag Functions 
-function dragStart() {
-    this.className += ' hold';
-    setTimeout( () => {
-        this.className = 'invisible';
-    }, 0)
-}
 
-function dragEnd() {
-    this.className = 'fill';
-}
-
-function dragOver(e) {
-    e.preventDefault();
-}
-
-function dragEnter(e) {
-    e.preventDefault();
-    this.className += ' hovered';
-}
-
-function dragLeave() {
-    this.className = 'empty';
-}
-
-function dragDrop() {
-    this.className = 'empty';
-    this.append(fill);
-}
+animate.addEventListener("animationend", (event) => {
+    console.log("animationend")
+});

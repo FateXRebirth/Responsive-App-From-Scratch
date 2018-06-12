@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Drag & Drop With Vanilla JS</title>
+	<title>ABC Loading</title>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,20 @@
 </head>
 
 <body>
-    <div class="empty">
-        <div class="fill" draggable="true"></div>
+    <div class="loading-wrapper">
+        <div class="loading">
+            <div class="img-wrapper">
+                <img src="images/icon1.png" id="animate">
+            </div>
+        </div>
+        <div class="loading2">
+            <div class="img-wrapper2"></div>
+            <img src="images/Marquee.png" id="animate2">
+        </div>
+        <div class="loading3">
+            <img src="images/loading.gif" id="animate3">
+        </div>
     </div>
-    <div class="empty"></div>
-    <div class="empty"></div>
-    <div class="empty"></div>
-    <div class="empty"></div>
     <script src="js/plugin.js"></script>
     <script src="js/main.js"></script>
 </body>

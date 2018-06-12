@@ -23,8 +23,11 @@ html, body {
 body {
     font: 1rem/1.6 sans-serif;
     line-height: 1.5;
-    justify-content: center;
+    
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
+    display: -webkit-flex;
     display: flex;
 }
 
